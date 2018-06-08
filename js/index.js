@@ -350,7 +350,7 @@ f.addEventListener("submit", function(e) {
       if (f.elements[i].value == song.code) {
         alert("Right!");
       } else {
-        alert("Wrong! "+ song.name " is the song.");
+        alert("Wrong! "+ song.name + " is the song.");
       }
     }
   }
