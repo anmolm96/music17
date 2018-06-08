@@ -308,11 +308,19 @@ var song;
 var audio;
 var f;
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // eslint-disable-line no-param-reassign
+    }
+}
+
 function reset_vals() {
   setFormListener();
   let week = Math.floor(Math.random() * music.length);
-  let shuff = music[week].sort(() => .5 - Math.random());
-  shuff = shuff.slice(0, 4);
+  let week_music = [...music[week]];
+  shuffleArray(week_music)
+  let shuff = week_music.slice(0, 4);
   song = shuff[Math.floor(Math.random() * 4)];
   audio = new Audio('songs/' + song.code + ".webm");
   audio.play();
