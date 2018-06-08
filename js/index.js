@@ -348,9 +348,9 @@ f.addEventListener("submit", function(e) {
     if (f.elements[i].checked) {
       console.log(f.elements[i].value, song.code)
       if (f.elements[i].value == song.code) {
-        alert("YES");
+        alert("Right!");
       } else {
-        alert("NO");
+        alert("Wrong! "+ song.name " is the song.");
       }
     }
   }
