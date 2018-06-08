@@ -306,8 +306,10 @@ const music = [
 
 var song;
 var audio;
+var f;
 
 function reset_vals() {
+  f = = document.forms[0]; //set form
   let week = Math.floor(Math.random() * music.length);
   let shuff = music[week].sort(() => .5 - Math.random());
   shuff = shuff.slice(0, 4);
@@ -338,7 +340,6 @@ function reset_vals() {
 
 window.onload = reset_vals;
 
-var f = document.forms[0];
 
 /*  This handler will run when you submit the form    */
 f.addEventListener("submit", function(e) {
