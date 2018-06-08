@@ -6,19 +6,28 @@
   <title>Music 17 Game</title>
 
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113489139-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
+    gtag('config', 'UA-113489139-1');
+  </script>
+  <script src="js/index.js"></script>
 
 </head>
 
 <body onLoad="reset_vals();">
-    <form>
-      <div id="radioDiv"></div>
-      <input type="submit" value="Submit">
-    </form>
+  <form>
+    <div id="radioDiv"></div>
+    <input type="submit" value="Submit">
+  </form>
 
-    <script src="js/index.js"></script>
-
-  </body>
+</body>
 
 </html>
