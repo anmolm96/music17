@@ -309,7 +309,7 @@ var audio;
 var f;
 
 function reset_vals() {
-  f = = document.forms[0]; //set form
+  setFormListener();
   let week = Math.floor(Math.random() * music.length);
   let shuff = music[week].sort(() => .5 - Math.random());
   shuff = shuff.slice(0, 4);
@@ -341,21 +341,23 @@ function reset_vals() {
 window.onload = reset_vals;
 
 
-/*  This handler will run when you submit the form    */
-f.addEventListener("submit", function(e) {
-  audio.pause();
-  audio.currentTime = 0;
-  for (var i = 0; i < f.elements.length; i++) {
-    if (f.elements[i].checked) {
-      console.log(f.elements[i].value, song.code)
-      if (f.elements[i].value == song.code) {
-        alert("Right!");
-      } else {
-        alert("Wrong! "+ song.name + " is the song.");
+function setFormListener() {
+  if(f) return;
+  f = document.forms[0];
+  f.addEventListener("submit", function(e) {
+    audio.pause();
+    audio.currentTime = 0;
+    for (var i = 0; i < f.elements.length; i++) {
+      if (f.elements[i].checked) {
+        if (f.elements[i].value == song.code) {
+          alert("Right!");
+        } else {
+          alert("Wrong! "+ song.name + " is the song.");
+        }
       }
     }
-  }
-  reset_vals();
-  e.preventDefault();
+    reset_vals();
+    e.preventDefault();
 
-});
+  });
+}
